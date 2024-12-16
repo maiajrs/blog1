@@ -94,6 +94,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (3.1.6)
     erubi (1.13.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -137,6 +138,7 @@ GEM
     nokogiri (1.16.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.9)
     psych (5.2.1)
       date
       stringio
@@ -239,8 +241,10 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  dotenv
   importmap-rails
   jbuilder
+  pg (~> 1.5)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver
