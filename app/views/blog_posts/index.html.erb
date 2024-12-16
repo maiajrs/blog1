@@ -1,0 +1,10 @@
+<h1>Blog Posts</h1>
+<hr>
+<% @blog_posts.each do |blog_post| %>
+  <%= link_to blog_post do %>
+    <span>Número: <%= blog_post.id %></span>
+    <h4><%=  blog_post.title %></h4>
+    <p><%= blog_post.body %></p>
+  <% end%>
+  <hr>
+<% end %>
