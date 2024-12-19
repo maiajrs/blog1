@@ -1,10 +1,20 @@
 <h1>Blog Posts</h1>
 <hr>
 <% @blog_posts.each do |blog_post| %>
-  <%= link_to blog_post do %>
-    <span>Número: <%= blog_post.id %></span>
-    <h4><%=  blog_post.title %></h4>
-    <p><%= blog_post.body %></p>
-  <% end%>
-  <hr>
+  <div class="p-2">
+    <%= link_to blog_post do %>
+      <% if blog_post.draft? %>
+        <p class="p-2 rounded bg-gray-100 text-gray-800">Draft</p>
+      <% elsif blog_post.schedule? %>
+          <p class="p-2 rounded bg-blue-100 text-gray-800">Scheduled</p>
+      <% elsif blog_post.published? %>
+          <p class="p-2 rounded bg-green-100 text-gray-800">Published</p>
+      <% end %>
+      <span>Número: <%= blog_post.id %></span>
+      <h4>Titulo: <%=  blog_post.title %></h4>
+      <p>Texto: <%= blog_post.body %></p>
+      <p>Data publicação: <%= blog_post.published_at %></p>
+    <% end%>
+    <hr>
+  </div>
 <% end %>
